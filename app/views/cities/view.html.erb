@@ -1,7 +1,7 @@
 <h1>Cities#index</h1>
 <p>Find me in app/views/cities/index.html.erb</p>
 
-<% if not @cities.nil?%>
+<% if not @cities.empty?%>
     <% @cities.each do |c| %>
         <h1> <%= c.name %></h1>
         <p>

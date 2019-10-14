@@ -1,10 +1,13 @@
-<h1>Create a New Todo</h1>
-<%= form_for @todo do |f| %>
+<h1>Create a New City</h1>
+<%= form_with local: true, method: "get" do |form| %>
+    <%= label_tag(:title, "City:") %>
+    <%= form.text_field :name%><br>
 
-  <%= label_tag(:title, "Title:") %>
-  <%= f.text_field :title %></br>
+    <%= label_tag(:title, "Population:") %>
+    <%= form.text_field :population%><br>
 
-  <%= label_tag(:description, "Description") %> 
-  <%= f.text_area :description %></br>
-  <%= f.submit "Create" %>
+    <%= label_tag(:title, "Most Famous Landmark:") %>
+    <%= form.text_field :landmark%><br>
+
+    <%= form.submit%>
 <% end %>

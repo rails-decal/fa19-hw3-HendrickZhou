@@ -2,7 +2,6 @@ require_relative '../services/weather_service'
 
 class CitiesController < ApplicationController
   def index
-
   end
 
   def view
@@ -22,6 +21,9 @@ class CitiesController < ApplicationController
   end
 
   def new
+  end
+
+  def create
     @w = WeatherService.get(params[:name])
     if @w
       city = City.new(
@@ -31,7 +33,13 @@ class CitiesController < ApplicationController
       )
       city.save
     end
+    redirect_to action: "view"
   end
+
+  def update
+  end
+
+
 
 
 end

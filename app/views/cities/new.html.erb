@@ -1,5 +1,8 @@
+<head>
+  <%= csrf_meta_tags %>
+</head>
 <h1>Create a New City</h1>
-<%= form_with local: true, method: "get" do |form| %>
+<%= form_with(method: "post", url: 'create', local: true) do |form| %>
     <%= label_tag(:title, "City:") %>
     <%= form.text_field :name%><br>
 

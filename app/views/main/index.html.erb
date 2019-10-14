@@ -1,1 +1,15 @@
 <!-- Your code here -->
+<%= form_with local: true, method: "get" do |form| %>
+    <%= form.text_field :city%>
+    <%= form.submit%>
+<% end %>
+
+<% City.all.each do |c| %>
+<% if not c.nil? %>
+	<h1> <%= c.name %></h1>
+	<p>
+        POPULATION:<%= c.population%>
+        LANDMARK:<%= c.landmark%>
+	</p>
+<% end %>
+<% end %>

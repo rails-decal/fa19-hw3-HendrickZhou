@@ -1,0 +1,14 @@
+<h1>Cities#index</h1>
+<p>Find me in app/views/cities/index.html.erb</p>
+
+<% if not @cities.nil?%>
+    <% @cities.each do |c| %>
+        <h1> <%= c.name %></h1>
+        <p>
+            POPULATION:<%= c.population%>
+            LANDMARK:<%= c.landmark%>
+        </p>
+    <% end %>
+<% else %>
+    <p> City is emtpy</p>
+<%end%>

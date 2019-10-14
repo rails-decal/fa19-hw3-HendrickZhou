@@ -9,9 +9,9 @@ class CitiesController < ApplicationController
     if not params.has_key?(:city)
       @cities=City.all.values
     else
-      if City.cities.has_key?(param[:city].to_sym)
+      if City.all.has_key?(params[:city].to_sym)
         # show this city
-        @cities = City.cities[param[:city].to_sym]
+        @cities = City.cities[params[:city].to_sym]
       else
         # dont care right
 
@@ -20,7 +20,7 @@ class CitiesController < ApplicationController
   end
 
   def new
-    
+
   end
 
 

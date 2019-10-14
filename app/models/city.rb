@@ -12,10 +12,6 @@ class City
         $cities[@name.to_sym] = self
     end
 
-    def find(name)
-        $cities.key?(name.to_sym)
-    end
-
     def self.all
         $cities
     end

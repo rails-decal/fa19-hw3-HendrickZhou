@@ -6,10 +6,17 @@ class CitiesController < ApplicationController
   end
 
   def view
-    if param[:city].nil?
+    if not params.has_key?(:city)
       @cities=City.all.values
     else
-      # @city=City.new(param[:city])
+      if City.cities.has_key?(param[:city].to_sym)
+        # show this city
+        @cities = City.cities[param[:city].to_sym]
+      else
+        # dont care right
+
+      end
+    end
   end
 
 end

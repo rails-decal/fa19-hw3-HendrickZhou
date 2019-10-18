@@ -10,7 +10,7 @@ class CitiesController < ApplicationController
       @cities=City.all.values
       puts @cities.length
     else
-      if City.all.has_key?(params[:city].to_sym)
+      if City.all.key?(params[:city].to_sym)
         # show this city
         @cities = City.cities[params[:city].to_sym]
       else
@@ -37,6 +37,15 @@ class CitiesController < ApplicationController
   end
 
   def update
+    if params.key?(:name)
+      if params.key?(:population)
+        @population = params[:population]
+      end
+      if params.key?(:landmark)
+        @landmark = params[:landmark]
+      end
+    end
+
   end
 
 

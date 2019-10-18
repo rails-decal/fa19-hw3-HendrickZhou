@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   get 'cities/new'
   post 'cities/create'
   post 'cities/update'
-  root "cities#index"
+  root "main#index"
 end
